@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FakeGuard - Fake News Detection</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header>
+            <div class="logo">
+                <span class="logo-icon">🛡️</span>
+                <h1>FakeGuard</h1>
+            </div>
+            <p class="subtitle">AI-Powered Fake News Detection System</p>
+        </header>
+
+        <!-- Main Content -->
+        <main>
+            <div class="input-section">
+                <label for="news-text">Enter News Article</label>
+                <textarea id="news-text" placeholder="Paste the news article text here..." rows="8"></textarea>
+                <div class="char-count">
+                    <span id="char-count">0</span> characters
+                </div>
+                <button id="predict-btn" onclick="predictNews()">
+                    <span>🔍</span> Check Authenticity
+                </button>
+            </div>
+
+            <!-- Results Section -->
+            <div id="results" class="results-section hidden">
+                <div class="result-card">
+                    <div class="result-header">
+                        <h2>Analysis Result</h2>
+                        <span id="result-badge" class="badge">Loading...</span>
+                    </div>
+                    <div class="result-details">
+                        <div class="confidence-bar">
+                            <label>Confidence Score</label>
+                            <div class="progress-bar">
+                                <div id="confidence-fill" class="progress-fill" style="width: 0%"></div>
+                            </div>
+                            <span id="confidence-text">0%</span>
+                        </div>
+                        <div class="probability-details">
+                            <div class="prob-item">
+                                <span class="prob-label">Fake</span>
+                                <span id="fake-prob" class="prob-value">0%</span>
+                            </div>
+                            <div class="prob-item">
+                                <span class="prob-label">Real</span>
+                                <span id="real-prob" class="prob-value">0%</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Loading Spinner -->
+            <div id="loading" class="loading-spinner hidden">
+                <div class="spinner"></div>
+                <p>Analyzing article...</p>
+            </div>
+        </main>
+
+        <!-- Footer -->
+        <footer>
+            <div class="footer-content">
+                <p class="disclaimer">⚠️ Educational demonstration only. Not for clinical or real-world use.</p>
+                <div class="social-links">
+                    <a href="{{ github_url }}" target="_blank" class="social-link">
+                        <span class="social-icon">🐙</span> GitHub
+                    </a>
+                    <a href="{{ linkedin_url }}" target="_blank" class="social-link">
+                        <span class="social-icon">🔗</span> LinkedIn
+                    </a>
+                </div>
+                <p class="author">Developed by <strong>Praveen</strong></p>
+            </div>
+        </footer>
+    </div>
+
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+</html>

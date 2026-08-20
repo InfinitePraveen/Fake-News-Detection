@@ -1,0 +1,27 @@
+{
+    "project_name": "Fake News Detection",
+    "model_type": "Logistic Regression",
+    "vectorizer": "TF-IDF",
+    "total_features": 5000,
+    "model_parameters": {
+        "C": 10.0,
+        "class_weight": null,
+        "dual": false,
+        "fit_intercept": true,
+        "intercept_scaling": 1,
+        "l1_ratio": 0.0,
+        "max_iter": 1000,
+        "n_jobs": null,
+        "penalty": "l2",
+        "random_state": 42,
+        "solver": "saga",
+        "tol": 0.0001,
+        "verbose": 0,
+        "warm_start": false
+    },
+    "classes": [
+        "Fake",
+        "Real"
+    ],
+    "export_date": "2026-08-20 19:58:20"
+}
